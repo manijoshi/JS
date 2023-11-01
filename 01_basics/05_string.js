@@ -49,3 +49,16 @@ const idxOfFirstDog = str.indexOf("dog");
 console.log(str.indexOf("dog",idxOfFirstDog+1));//indexOf is case-sensitive
 console.log(str.lastIndexOf("dog"));
 console.log("manisha".substring(1,4))
+console.log("mnhsh".localeCompare("n"));
+const names = ["pranav","aman",'pooja','bhupendra'];
+console.log(names.sort((a,b)=>a.localeCompare(b)));
+const fullnames = ["paul rana","merry rawat","vishwas dubey","alia sharma"];
+fullnames.sort((a,b)=>a.split(' ')[1].localeCompare(b.split(' ')[1]));
+console.log(fullnames);
+const regex = /[A-Z]/g;
+const stmt = "The quick brown fox jumps over the little lazy Dog.";
+const found = stmt.match(regex);
+console.log(found);
+const myContact = "9871234512";
+console.log(myContact.slice(-4).padStart(myContact.length,'*'));
+console.log(myContact.repeat(2));
