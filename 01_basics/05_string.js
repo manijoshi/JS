@@ -62,3 +62,38 @@ console.log(found);
 const myContact = "9871234512";
 console.log(myContact.slice(-4).padStart(myContact.length,'*'));
 console.log(myContact.repeat(2));
+
+const nickName = "kunnu";
+console.log(nickName.slice(1,5));
+console.log(nickName)
+
+const cars = ["Saab", "Volvo", "BMW"];
+cars.splice(1,0,'Suzuki');
+console.log(cars);
+console.log(cars.slice(1,5));
+const num = ["2","1","4","55","45","3"];
+const numCopy = [...num];//copy an array using spread 
+const numCopy1 = num.slice();
+console.log(numCopy.sort((a,b)=>b-a));//descending order sorting
+console.log(num);
+
+const str1 = "ansi Khurana";
+const reg = /[A-Z]/;
+console.log(str1.search(reg));
+
+const num3 = ["2","1","4","55","45","3"];
+// console.log(num3.toSorted());//prevents inplace sorting
+console.log(num3.sort((a,b)=>b.localeCompare(a)));
+console.log(num3);
+
+
+const regexp = /foo[a-z]*/g;
+const strr = "table football, foosball";
+let match;
+const abc = Array.from(strr.matchAll(regexp),(m)=>m[0]);
+console.log(abc);
+while((match = regexp.exec(strr))!==null){
+    console.log(
+        `Found ${match[0]} start=${match.index} end=${regexp.lastIndex}`
+    );
+}
