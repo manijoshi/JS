@@ -65,5 +65,22 @@ const {greeting:g}=course
 const result = fetch("https://jsonplaceholder.typicode.com/todos/1");
 result.then(res => 
     res.json()).then(d => { 
-        console.log(d) 
+        // console.log(d) 
     }) 
+const test1 = {
+    fest:"Diwali",
+    greeting: function(){
+        return `Happy ${this.fest}`;
+    }
+}
+console.log(test1.greeting.call(test1));
+const object1 = {
+    property1:"blah",
+    method1:function(){
+        console.log(this.property1);
+    }
+}
+function func1(passedObject,passedfunction){
+    passedfunction.call(passedObject);
+}
+// func1(object1,object1.method1);
