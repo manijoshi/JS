@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>DOM chai aur code</title>
+    </head>
+    <body style="background-color: #212121;color: white;">
+        
+    </body>
+    <script>
+        const div = document.createElement('div');
+        const h1 = document.createElement('h1');
+        div.setAttribute('id','title');
+        console.log(div);
+        document.body.appendChild(div);
+        document.body.appendChild(h1);
+        const textNode = document.createTextNode("Hello World!");
+        h1.appendChild(textNode);
+        console.log(div.nextElementSibling);
+    </script>
+</html>
