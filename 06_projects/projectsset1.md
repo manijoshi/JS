@@ -42,3 +42,9 @@ form.addEventListener('submit', function (e) {
   }
 });
 ```
+
+## Project 3
+setInterval(function(){
+  document.querySelector("#clock").innerHTML = 
+new Date().toLocaleTimeString()
+},1000);
