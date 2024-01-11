@@ -44,12 +44,15 @@ form.addEventListener('submit', function (e) {
 ```
 
 ## Project 3
+```
 setInterval(function(){
   document.querySelector("#clock").innerHTML = 
 new Date().toLocaleTimeString()
 },1000);
+```
 
 ## Project 4
+```
 let randomNumber = parseInt(Math.random()*100+1);
 const submit = document.querySelector("#subt");
 const guessField = document.querySelector("#guessField");
@@ -144,3 +147,4 @@ function newGame(){
     playGame=true;
   })
 }
+```
