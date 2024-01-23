@@ -13,6 +13,7 @@
             <div class="day">Wednesday</div>
             <div class="day">Thursday</div>
         </div>
+        <button id="create-whatsapp-link">whatsapp me</button>
     </body>
     <script>
         const parent = document.querySelector('.parent');
@@ -29,5 +30,11 @@
         console.log(lastElement.parentElement);
         console.log(parent.firstElementChild.nextElementSibling);
         console.log(parent.childNodes);
+
+        const content = "Ram mandir isthapna divas";
+        document.getElementById("create-whatsapp-link").addEventListener('click',function(){
+            let whatsappUrl = "whatsapp://send?text="+encodeURIComponent(content);
+            window.location.href=whatsappUrl;
+        })
     </script>
 </html>
