@@ -148,3 +148,74 @@ function newGame(){
   })
 }
 ```
+
+### Project 6
+```
+const randomColor = function(){
+    const hex = "1234567890ABCDEF";
+    let color="#";
+    for(let i=0;i<6;i++){
+      color+=hex[Math.floor(Math.random()*16)]
+    }
+    return color;
+}
+
+let intervalId;
+function changeColor(){
+  if(!intervalId){
+    intervalId=setInterval(changebgColor,1000);
+  }
+  function changebgColor(){
+    document.body.style.backgroundColor = randomColor()
+  }
+}
+document.querySelector("#start").addEventListener("click",changeColor)
+
+document.querySelector("#stop").addEventListener("click",stopColorChange)
+
+
+function stopColorChange(){
+  clearInterval(intervalId);
+  intervalId = null
+}
+
+// let c=''
+// for(let i=0;i<3;i++){
+//   c+=` ${Math.floor(Math.random()*256)}`
+// }
+// console.log(c)
+
+// var h = "0123456789ABCDEF"
+// var cl='#'
+// for(let i=0;i<6;i++){
+//   cl+=h[Math.floor(Math.random()*16)]
+// }
+// console.log(cl)
+
+// let random1 = Math.floor(Math.random()*255)
+// let random2 = Math.floor(Math.random()*255)
+// let random3 = Math.floor(Math.random()*255)
+// let clr = `rgba(${random1},${random2},${random3})`
+```
+
+### Project 5
+```
+const insert = document.querySelector("#insert")
+window.addEventListener("keydown",(e)=>{
+document.querySelector(".key").innerHTML = 
+`<div class="color">
+<table>
+<tr>
+<td>Key</td>
+<td>KeyCode</td>
+<td>Code</td>
+</tr>
+<tr>
+<td>${e.key===" "?"Space":e.key}</td>
+<td>${e.keyCode}</td>
+<td>${e.code}</td>
+</tr> 
+</table>
+</div>`
+})
+```
