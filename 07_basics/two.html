@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>setTimeout|clearTimeout/title>
+        <style>
+            .bg-color{
+                background-color: #212121;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body class="bg-color">
+        <h1>Chai aur Code</h1>
+        <button id="stop">Stop</button>
+    </body>
+    <script>
+        var changeText = function(){
+            document.querySelector('h1').innerText = "Chai aur JS";
+        }
+        var changeMe = setTimeout(changeText, 2000);
+        document.querySelector('#stop').addEventListener("click",()=>{clearTimeout(changeMe);console.log("Stopped")})
+        
+        var intervalId = setInterval(() => {
+            console.log('Manisha')
+        }, 1000);
+        clearInterval(intervalId);
+    </script>
+</html>
