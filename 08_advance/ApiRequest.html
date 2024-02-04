@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Advance JS chai aur code</title>
+    </head>
+    <body style="background-color: #212121;color: white;">
+        <div class="profile">
+            <div class="insert"></div>
+            <button class="send">Click</button>
+        </div>
+    </body>
+    <script>
+        const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',requestUrl);
+        console.log(xhr.readyState);
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            if(xhr.readyState==4){
+                var data = JSON.parse(this.responseText)
+                var insert = document.querySelector('.insert');
+                var send = document.querySelector('.send');
+                function sendData(){
+                    var img = document.createElement('img');
+                    img.src = data.avatar_url
+                    insert.appendChild(img);
+                    var followers=document.createElement('h1');
+                    followers.innerHTML = `${data.followers}`
+                    insert.appendChild(followers)
+                    send.remove();
+                }
+                send.addEventListener('click',sendData)
+            }
+            
+        }
+        xhr.send()
+        
+        
+    </script>
+</html>
